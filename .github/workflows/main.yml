@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main  # 빌드를 실행할 브랜치 설정
-  pull_request:
-    branches:
-      - main  # 빌드 실 브랜치 설정
 
 jobs:
   build:
