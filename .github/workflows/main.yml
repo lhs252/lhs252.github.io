@@ -1,0 +1,22 @@
+name: HTML build
+
+on:
+  push:
+    branches:
+      - main  # 빌드를 실행할 브랜치 설정
+  pull_request:
+    branches:
+      - main  # 빌드 실 브랜치 설정
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: HTML 파일 빌드
+      run: |
+        mkdir dist  # 압축 파일 저장 디렉토리 생성
+        npx html-minifier --input-dir src --output-dir dist --file-ext html --collapse-whitespace --remove-comments
