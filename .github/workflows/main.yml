@@ -19,4 +19,5 @@ jobs:
     - name: HTML 파일 빌드
       run: |
         mkdir dist  # 압축 파일 저장 디렉토리 생성
+        mkdir src
         node --input-dir src --output-dir dist --file-ext html --collapse-whitespace --remove-comments
